@@ -18,4 +18,4 @@ gem 'test-kitchen'
 gem 'kitchen-vagrant'
 gem 'rake'
 gem 'foodcritic'
-
+gem 'strainer'

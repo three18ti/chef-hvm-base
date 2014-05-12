@@ -1,6 +1,6 @@
 # encoding: utf-8
 # Cookbook Name:: hvm-base
-# Attributes:: default
+# Recipe:: default
 #
 # Copyright 2014, three18ti
 #
@@ -23,3 +23,12 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
+
+case node[:platform]
+when 'ubuntu', 'debian'
+  node['hvm-base']['base-packages'].each do |package_name|
+    package package_name do
+      action :install
+    end
+  end
+end

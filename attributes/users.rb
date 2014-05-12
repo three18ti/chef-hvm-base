@@ -1,6 +1,6 @@
 # encoding: utf-8
 # Cookbook Name:: hvm-base
-# Attributes:: default
+# Attributes:: users
 #
 # Copyright 2014, three18ti
 #
@@ -23,3 +23,11 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
+
+default['hvm-base']['hvm-user']['name']             = 'oneadmin'
+default['hvm-base']['hvm-user']['group']            = 'cloud'
+default['hvm-base']['hvm-user']['uid']              = 119
+default['hvm-base']['hvm-user']['gid']              = 128
+default['hvm-base']['hvm-user']['shell']            = '/bin/bash'
+default['hvm-base']['hvm-user']['home']             = '/var/lib/one'
+default['hvm-base']['hvm-user']['default-groups']   = %w(cloud kvm libvirtd ceph)

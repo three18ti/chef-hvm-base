@@ -1,4 +1,4 @@
-#
+# encoding: utf-8
 # Cookbook Name:: hvm-base
 # Recipe:: default
 #
@@ -23,3 +23,8 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
+
+include_recipe 'hvm-base::packages'
+include_recipe 'hvm-base::users'
+include_recipe 'hvm-base::sudo-default'
+include_recipe 'hvm-base::config-files'

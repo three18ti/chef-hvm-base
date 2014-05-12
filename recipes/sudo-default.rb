@@ -1,6 +1,6 @@
 # encoding: utf-8
 # Cookbook Name:: hvm-base
-# Attributes:: default
+# Recipe:: sudo-default
 #
 # Copyright 2014, three18ti
 #
@@ -23,3 +23,10 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
+
+sudo 'oneadmin' do
+  user      'oneadmin'
+  runas     'root'
+  commands  ['/usr/bin/ovs-ofctl', '/usr/bin/ovs-vsctl']
+  nopasswd  true
+end

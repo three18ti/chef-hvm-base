@@ -1,6 +1,6 @@
 # encoding: utf-8
 # Cookbook Name:: hvm-base
-# Attributes:: default
+# Recipe:: default
 #
 # Copyright 2014, three18ti
 #
@@ -23,3 +23,29 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
+
+group node['hvm-base']['hvm-user']['group'] do
+  action    :create
+  gid       node['hvm-base']['hvm-user']['group']
+end
+
+group node['hvm-base']['ceph']['group'] do 
+  action    :create
+end
+
+user node['hvm-base']['hvm-user']['name'] do
+  system    true
+  uid       node['hvm-base']['hvm-user']['uid']
+  gid       node['hvm-base']['hvm-user']['group']
+  shell     node['hvm-base']['hvm-user']['shell']
+  home      node['hvm-base']['hvm-user']['home']
+end
+
+node['hvm-base']['hvm-user']['default-groups'].each do |user_group|
+  group user_group do
+    action :manage
+    gid user_group
+    append true
+    members ['hvm-base']['hvm-user']['name']
+  end
+end

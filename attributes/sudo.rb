@@ -1,6 +1,6 @@
 # encoding: utf-8
 # Cookbook Name:: hvm-base
-# Attributes:: default
+# Attributes:: sudo
 #
 # Copyright 2014, three18ti
 #
@@ -23,3 +23,12 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
+
+default['authorization']['sudo']['sudoers_defaults'] = [
+  'insults',
+  'env_reset',
+  'mail_badpass',
+  'secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"'
+]
+
+default['authorization']['sudo']['groups'] = %w(admin sudo)

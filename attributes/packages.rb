@@ -23,3 +23,14 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
+
+default['hvm-base']['default-packages'] = %w(
+  ceph ceph-common
+  ifenslave ipxe-qemu
+  librados2 librbd1 libvirt-bin
+  openvswitch-common openvswitch-controller
+  openvswitch-pki openvswitch-switch
+  python-ceph qemu-kvm
+  qemu-system-common
+  qemu-system-x86 qemu-utils screen
+)

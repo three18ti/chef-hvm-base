@@ -26,7 +26,7 @@
 
 template '/etc/ceph/ceph.conf' do
   source 'etc/ceph/ceph.conf.erb'
-  mode 644
+  mode 0644
   owner 'root'
   group node['hvm-base']['hvm-user']['group']
   variables(
@@ -44,7 +44,7 @@ end
 ['etc/libvirt/qemu.conf', 'etc/apparmor.d/abstractions/libvirt-qemu', 'etc/apparmor.d/usr.sbin.libvirtd'].each do |config|
   template "/#{config}" do
     source "#{config}.erb"
-    mode 644
+    mode 0644
     owner 'root'
     group 'root'
   end

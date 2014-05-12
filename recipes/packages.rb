@@ -24,7 +24,7 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-case node[:platform]
+case node['platform']
 when 'ubuntu', 'debian'
   node['hvm-base']['base-packages'].each do |package_name|
     package package_name do

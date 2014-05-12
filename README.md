@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/three18ti/chef-hvm-base.svg?branch=master)](https://travis-ci.org/three18ti/chef-hvm-base)
+
 hvm-base Cookbook
 =================
 TODO: Enter the cookbook description here.

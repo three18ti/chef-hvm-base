@@ -26,7 +26,7 @@
 
 case node['platform']
 when 'ubuntu', 'debian'
-  node['hvm-base']['base-packages'].each do |package_name|
+  node['hvm-base']['default-packages'].each do |package_name|
     package package_name do
       action :install
     end

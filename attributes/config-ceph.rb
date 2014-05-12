@@ -25,6 +25,7 @@
 #
 
 default['hvm-base']['ceph']['group']                                = 'ceph'
+default['hvm-base']['ceph']['gid']                                  = 1001
 default['hvm-base']['ceph']['global']['fsid']                       = '86f293d0-bec7-4694-ace7-af3fbaa98736'
 default['hvm-base']['ceph']['global']['mon_initial_members']        = %w(red6 kitt shepard)
 default['hvm-base']['ceph']['global']['mon_host']                   = ['192.168.0.40', '192.168.0.35', '192.168.0.2']

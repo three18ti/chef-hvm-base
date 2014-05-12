@@ -25,12 +25,15 @@
 #
 
 group node['hvm-base']['hvm-user']['group'] do
+  append    true
   action    :create
-  gid       node['hvm-base']['hvm-user']['group']
+  gid       node['hvm-base']['hvm-user']['gid']
 end
 
-group node['hvm-base']['ceph']['group'] do 
+group node['hvm-base']['ceph']['group'] do
+  append    true
   action    :create
+  gid       node['hvm-base']['ceph']['gid']
 end
 
 user node['hvm-base']['hvm-user']['name'] do
@@ -44,8 +47,7 @@ end
 node['hvm-base']['hvm-user']['default-groups'].each do |user_group|
   group user_group do
     action :manage
-    gid user_group
     append true
-    members ['hvm-base']['hvm-user']['name']
+    members node['hvm-base']['hvm-user']['name']
   end
 end

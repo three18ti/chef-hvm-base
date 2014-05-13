@@ -47,7 +47,7 @@ template '/etc/libvirt/qemu.conf' do
   owner 'root'
   group 'root'
   variables(
-    hvm_user_name: node['hvm-base']['hvm-user']['name']
+    hvm_user_name: node['hvm-base']['hvm-user']['name'],
     hvm_user_group: node['hvm-base']['hvm-user']['group']
   )
 end

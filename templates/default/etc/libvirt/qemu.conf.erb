@@ -227,13 +227,13 @@
 #
 #user = "root"
 
-user = "<%= hvm_user_name %>"
+user = "<%= @hvm_user_name %>"
 
 # The group for QEMU processes run by the system instance. It can be
 # specified in a similar way to user.
 # group = "root"
 
-group = "<%= hvm_user_group %>"
+group = "<%= @hvm_user_group %>"
 
 # Whether libvirt should dynamically change file ownership
 # to match the configured user/group above. Defaults to 1.

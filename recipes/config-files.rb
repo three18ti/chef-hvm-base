@@ -41,7 +41,18 @@ template '/etc/ceph/ceph.conf' do
   )
 end
 
-['etc/libvirt/qemu.conf', 'etc/apparmor.d/abstractions/libvirt-qemu', 'etc/apparmor.d/usr.sbin.libvirtd'].each do |config|
+template '/etc/libvirt/qemu.conf' do
+  source "etc/libvirt/qemu.conf.erb"
+  mode 0644
+  owner 'root'
+  group 'root'
+  variables(
+    hvm_user_name: node['hvm-base']['hvm-user']['name']
+    hvm_user_group: node['hvm-base']['hvm-user']['group']
+  )
+end
+
+['etc/apparmor.d/abstractions/libvirt-qemu', 'etc/apparmor.d/usr.sbin.libvirtd'].each do |config|
   template "/#{config}" do
     source "#{config}.erb"
     mode 0644

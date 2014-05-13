@@ -98,8 +98,6 @@
 #
 #vnc_allow_host_audio = 0
 
-
-
 # SPICE is configured to listen on 127.0.0.1 by default.
 # To make it listen on all public interfaces, uncomment
 # this next option.
@@ -228,11 +226,14 @@
 #       user = "100"    # A user named "100" or a user with uid=100
 #
 #user = "root"
-user = "oneadmin"
+
+user = "<%= hvm_user_name %>"
 
 # The group for QEMU processes run by the system instance. It can be
 # specified in a similar way to user.
-group = "cloud"
+# group = "root"
+
+group = "<%= hvm_user_group %>"
 
 # Whether libvirt should dynamically change file ownership
 # to match the configured user/group above. Defaults to 1.

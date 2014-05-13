@@ -16,6 +16,7 @@ gem 'berkshelf'
 
 gem 'test-kitchen'
 gem 'kitchen-vagrant'
+gem 'travis'
 gem 'rake'
 gem 'foodcritic'
 gem 'strainer'
